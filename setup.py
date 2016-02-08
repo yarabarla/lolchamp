@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import lolchamp
+
 try:
     from setuptools import setup, find_packages
     get_packages = find_packages
@@ -9,7 +11,7 @@ except ImportError:
 
 setup(
     name='lolchamp',
-    version=version,
+    version=lolchamp.__version__,
     description='A CLI tool that provides optimal champion and matchup info for the game League of Legends.',
     author='Akhilesh Yarabarla',
     author_email='akhileshyarabarla@gmail.com',
