@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import lolchamp
+import lolchamp.__init__
 
 try:
     from setuptools import setup, find_packages
