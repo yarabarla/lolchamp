@@ -1,14 +1,14 @@
 from requests_futures.sessions import FuturesSession
 
 def main():
-    session = authorize_user()
+    session, api_key = authorize_user()
 
 def authorize_user():
     """
     Opens up an async requests session to persist the connection to the
     endpoint. Validates the API key and returns the session.
     """
-    def validate_api_key(session, key):
+    def validated_api_key(session, key):
         """
         Connects to endpoint to check status code. Returns a boolean depending
         on whether access is valid or not
@@ -24,12 +24,12 @@ def authorize_user():
 
     session = FuturesSession()
 
-    valid_key = False
-    while not valid_key:
+    key_validated = False
+    while not key_validated:
         api_key = input("Enter the API key: ")
-        valid_key = validate_api_key(session, api_key)
+        key_validated = validated_api_key(session, api_key)
 
-    return session
+    return session, api_key
 
 if __name__ == '__main__':
     main()
