@@ -1,7 +1,12 @@
 from requests_futures.sessions import FuturesSession
+from Champion import Champion
 
 def main():
     session, api_key = authorize_user()
+    Champion.getcredentials()
+
+    champ = Champion("Lux")
+    champ.items()
 
 def authorize_user():
     """
